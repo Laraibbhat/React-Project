@@ -1,34 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
+//import 'bootstrap/dist/css/bootstrap.css'; 
+import './CommonPage.css'
+
 
 class CommonPage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
     render() {
         const { user, users } = this.props;
         return (
             <div className="commonPage">
-                <h3>This is common page to both Admin And user</h3>
-                
-               
+                <nav className="nav1">
+                    <div className="container1">
+                        <h1 className="logo"><a href="#">Container APP</a></h1>
+                        <ul>
+                            <li><a href="#" className="current">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
-    return {
-        user,
-        users
-    };
-}
 
-const connectedHomePage = connect(mapStateToProps)(CommonPage);
-export default   connectedHomePage;
+
+export default   CommonPage;

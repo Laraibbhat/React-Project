@@ -13,8 +13,10 @@ class HomePageAdmin extends React.Component {
     render() {
         const { user, users } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div className='HomePageAdmin'>
                 <CommonPage/>
+            <div className="container">
+                
                 <h1>Hi {user.firstName}!</h1>
                 <h3>This content is from Admin Page which contains all the details of users </h3>
                 <p>You're logged in with Container App that is build using React-redux!!</p>
@@ -30,9 +32,10 @@ class HomePageAdmin extends React.Component {
                         )}
                     </ul>
                 }
-                <p>
-                    <Link to="/login">Logout</Link>
+                <p >
+                    <Link style={{backgroundColor: "lightblue"}} to="/login">Logout</Link>
                 </p>
+            </div>
             </div>
         );
     }

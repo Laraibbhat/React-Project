@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CommonPage from './CommonPage'
 
-import { userActions } from '../_actions';
+
 
 class HomePage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
     render() {
         const { user, users } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div className='HomePage'  >
                 <CommonPage/>
-                <h1>Hi {user.firstName}!</h1>
+                <main>
+            <div className="container "  >
+                
+                <h1 >Hi {user.firstName}!</h1>
                 <h3>This is User page</h3>
                 <p>You're logged in with Container App that is build using React-redux!!</p>
                 
                 <p>
-                    <Link to="/login">Logout</Link>
+                    <Link style={{backgroundColor: "lightblue"}} to="/login">Logout</Link>
                 </p>
+            </div>
+            </main>
             </div>
         );
     }
